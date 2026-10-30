@@ -96,3 +96,11 @@ Both demos use GitHub Pages main / (root). Build and commit generated root files
 Twin entry source is index.source.html; root index.html is generated. Master snapshots
 now use version 2.0.0 for set-up / active / inactive / expired lifecycle semantics.
 The twin still uses context navigation, not automatic master snapshot import.
+
+## Drawing workspace available
+
+Engineering drawing demo is published from main / (root) at
+https://leetj94-lab.github.io/engineering_drawing/ . The twin drawing fixture now
+uses the actual released UT-PID/GA/SLD identifiers and revisions. Export scopes
+many-to-many asset references to the selected equipment. No live synchronization
+or CAD import is claimed.

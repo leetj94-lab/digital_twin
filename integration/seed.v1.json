@@ -166,76 +166,64 @@
   ],
   "drawings": [
     {
-      "id": "DWG-0001",
+      "id": "UT-PID-0101",
       "assetIds": [
-        "EQ-UT-00142"
-      ],
-      "title": "Chilled water pump A arrangement",
-      "revision": "C",
-      "status": "Approved"
-    },
-    {
-      "id": "DWG-0002",
-      "assetIds": [
-        "EQ-UT-00143"
-      ],
-      "title": "Chilled water pump B arrangement",
-      "revision": "C",
-      "status": "Approved"
-    },
-    {
-      "id": "DWG-0003",
-      "assetIds": [
-        "EQ-UT-00144"
-      ],
-      "title": "Chilled water pump C arrangement",
-      "revision": "C",
-      "status": "Approved"
-    },
-    {
-      "id": "DWG-0004",
-      "assetIds": [
-        "EQ-CH-00201"
-      ],
-      "title": "Chiller unit A arrangement",
-      "revision": "C",
-      "status": "Approved"
-    },
-    {
-      "id": "DWG-0005",
-      "assetIds": [
-        "EQ-CH-00202"
-      ],
-      "title": "Chiller unit B arrangement",
-      "revision": "C",
-      "status": "Approved"
-    },
-    {
-      "id": "DWG-0006",
-      "assetIds": [
-        "EQ-AH-00301"
-      ],
-      "title": "Air handling unit A arrangement",
-      "revision": "C",
-      "status": "Approved"
-    },
-    {
-      "id": "DWG-0007",
-      "assetIds": [
-        "EQ-AH-00302"
-      ],
-      "title": "Air handling unit B arrangement",
-      "revision": "C",
-      "status": "Approved"
-    },
-    {
-      "id": "DWG-0008",
-      "assetIds": [
+        "EQ-CH-00201",
+        "EQ-CH-00202",
         "EQ-TK-00401"
       ],
-      "title": "Buffer tank arrangement",
+      "title": "CHILLED WATER GENERATION",
       "revision": "C",
-      "status": "Approved"
+      "status": "Released"
+    },
+    {
+      "id": "UT-PID-0102",
+      "assetIds": [
+        "EQ-UT-00142",
+        "EQ-UT-00143",
+        "EQ-UT-00144"
+      ],
+      "title": "CHILLED WATER PUMP DISTRIBUTION",
+      "revision": "C",
+      "status": "Released"
+    },
+    {
+      "id": "UT-PID-0103",
+      "assetIds": [
+        "EQ-AH-00301",
+        "EQ-AH-00302"
+      ],
+      "title": "AIR HANDLING DISTRIBUTION",
+      "revision": "B",
+      "status": "Released"
+    },
+    {
+      "id": "UT-GA-0201",
+      "assetIds": [
+        "EQ-CH-00201",
+        "EQ-CH-00202",
+        "EQ-TK-00401",
+        "EQ-UT-00142",
+        "EQ-UT-00143",
+        "EQ-UT-00144",
+        "EQ-AH-00301",
+        "EQ-AH-00302"
+      ],
+      "title": "UTILITY HALL EQUIPMENT ARRANGEMENT",
+      "revision": "A",
+      "status": "Released"
+    },
+    {
+      "id": "UT-SLD-0301",
+      "assetIds": [
+        "EQ-UT-00142",
+        "EQ-UT-00143",
+        "EQ-UT-00144",
+        "EQ-CH-00201"
+      ],
+      "title": "UTILITY MOTOR POWER SINGLE LINE",
+      "revision": "B",
+      "status": "Released"
     }
   ],
   "documents": [
