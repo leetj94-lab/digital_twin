@@ -37,3 +37,6 @@ This frontend demo has no backend, authentication or live industrial telemetry. 
   export produces a successful download action and confirmation. Reload restores
   the selected equipment and Platform tab from the URL.
 - GPU verification boundary described above still applies.
+
+- Master data now has a verified deployed URL in the platform registry. Its link
+  carries the selected canonical asset ID; other applications remain Planned.

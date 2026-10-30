@@ -1,6 +1,6 @@
 # Shared demo platform — contract v1
 
-The four related repositories are planned applications. This release changes only
+Master data is available as an independent standards/lifecycle demo. The other three related repositories are planned applications. This release changes only
 `digital_twin`; it does not claim those apps are deployed or synchronized.
 
 ## Ownership and compatibility
@@ -39,9 +39,9 @@ The twin additionally supports `tab=Overview|Quality|Alarms|Work|Documents|Platf
 Its URLs preserve the deployment subpath. A direct URL reopens the matching equipment
 and section. Invalid equipment IDs do not select an unrelated asset.
 
-`modules` contains the four exact repositories and `baseUrl:null`. Set each base URL
+`modules` contains the four exact repositories. Master data has a verified deployed base URL; other applications have `baseUrl:null`. Set each base URL
 only after the actual deployment exists; `moduleLink` then constructs asset context
-and `returnTo`. Until then the UI explicitly says Planned and links to source only.
+and `returnTo`. Unimplemented applications explicitly say Planned and link to source only. Master data opens its equipment context.
 Future receivers must allowlist return origins/paths and never redirect blindly to
 an arbitrary `returnTo` URL. Do not put tokens, document bodies or private data in URLs.
 

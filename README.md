@@ -65,6 +65,6 @@ WebGL-unavailable browsers use Three.js SVGRenderer compatibility rendering of t
 
 Equipment list supports minimize, close and reopen. Model name tags are clickable
 selection controls. Deep links restore equipment and section (`?assetId=EQ-UT-00142&tab=Platform`).
-The Platform tab shows the four planned repositories and exports an equipment-scoped
+The Platform tab opens the available master-data demo and shows three planned repositories and exports an equipment-scoped
 JSON bundle. No live integrations are claimed. See [integration contract](docs/INTEGRATION.md)
 for common fixtures, JSON Schema, ownership, URL contracts and the shared-backend roadmap.

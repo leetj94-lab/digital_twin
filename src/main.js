@@ -3,7 +3,7 @@ import {createIcons,Box,Search,TriangleAlert,MapPin,X,Maximize,Plus,Minus,Layers
 import {assets,initialAlarms,loadState,saveState,createWork,acknowledge,trend,escapeHTML as esc} from './data.js';
 import {createViewer} from './viewer.js';
 import seed from '../public/integration/seed.v1.json' with {type:'json'};
-import {modules, createBundle, readContext, writeContext, validateBundle} from '../shared/platform.js';
+import {modules, moduleLink, createBundle, readContext, writeContext, validateBundle} from '../shared/platform.js';
 const icons={Box,Search,TriangleAlert,MapPin,X,Maximize,Plus,Minus,Layers,RotateCcw,Info,ChevronRight,ArrowUpRight,FileText,Activity,Bell,Wrench,Check,ExternalLink,Package,Focus,Building2,Compass,ShieldCheck,Link,Download};
 const icon=(name)=>`<i data-lucide="${name}"></i>`;
 let storage; try { storage = window.localStorage; } catch { storage = undefined; }
@@ -51,7 +51,7 @@ $('#close-equipment').onclick=()=>{$('#equipment-panel').hidden=true;$('#show-eq
 $('#show-equipment').onclick=()=>{$('#equipment-panel').hidden=false;$('#show-equipment').hidden=true;$('#minimize-equipment').focus();};
 function platformPanel(a){
  const counts={master_data:1,engineering_drawing:seed.drawings.filter(r=>r.assetIds.includes(a.id)).length,document_delivery:seed.deliveries.filter(r=>r.assetIds.includes(a.id)).length,etl_monitoring:seed.pipelines.filter(r=>r.assetIds.includes(a.id)).length};
- return `<div class="section-title">Connected platform <span>Integration foundation</span></div><div class="notice">Shared asset ID: <b>${esc(a.id)}</b><br>Each future app will receive this equipment context. These four applications are planned; no live synchronization is running.</div>${modules.map(m=>`<div class="context-card"><div class="row"><strong>${esc(m.name)}</strong><span class="badge planned">Planned</span></div><p>${esc(m.description)}<br>${counts[m.id]} linked sample record(s)</p><a class="repo-link" href="${m.repository}" target="_blank" rel="noopener">View repository ↗</a></div>`).join('')}<button class="primary" data-export-context>${icon('download')} Export linked sample JSON</button><p class="drawer-callout">Version 1.0.0 · Synthetic data · Portable across domains. Includes related records, alarm acknowledgements and work requests for this asset.</p>`;
+ return `<div class="section-title">Connected platform <span>Integration foundation</span></div><div class="notice">Shared asset ID: <b>${esc(a.id)}</b><br>Master data is available as a separate demo; other applications are planned. Navigation retains equipment identity. Browser-local changes are not synchronized.</div>${modules.map(m=>`<div class="context-card"><div class="row"><strong>${esc(m.name)}</strong><span class="badge ${m.baseUrl?'blue':'planned'}">${m.baseUrl?'Available demo':'Planned'}</span></div><p>${esc(m.description)}<br>${counts[m.id]} linked sample record(s)</p>${m.baseUrl?`<a class="repo-link" href="${esc(moduleLink(m,a.id,location.href))}" target="_blank" rel="noopener">Open linked equipment ↗</a><br>`:''}<a class="repo-link" href="${m.repository}" target="_blank" rel="noopener">View repository ↗</a></div>`).join('')}<button class="primary" data-export-context>${icon('download')} Export linked sample JSON</button><p class="drawer-callout">Version 1.0.0 · Synthetic data · Portable across domains. Includes related records, alarm acknowledgements and work requests for this asset.</p>`;
 }
 function exportContext(a){
  const bundle=createBundle(seed,state,a.id);validateBundle(bundle);

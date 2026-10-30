@@ -33,7 +33,8 @@ test('deep links preserve deployment subpaths, unrelated parameters and selected
   assert.equal(new URL(writeContext(href,{assetId:null})).searchParams.has('assetId'),false);
 });
 test('unimplemented apps have no fabricated live URL; configured apps carry return context',()=>{
-  for(const m of modules)assert.equal(moduleLink(m,assets[0].id),null);
+  for(const m of modules.filter(m=>!m.baseUrl))assert.equal(moduleLink(m,assets[0].id),null);
+  assert.equal(new URL(moduleLink(modules[0],assets[0].id)).searchParams.get('assetId'),assets[0].id);
   const link=moduleLink({...modules[0],baseUrl:'https://example.test/master_data/'},assets[0].id,'https://example.test/digital_twin/');
   const url=new URL(link);assert.equal(url.searchParams.get('assetId'),assets[0].id);
   assert.equal(new URL(url.searchParams.get('returnTo')).searchParams.get('tab'),'Platform');
