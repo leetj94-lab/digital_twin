@@ -332,6 +332,7 @@
   "pipelines": [
     {
       "id": "PIPE-ASSET-SYNC",
+      "name": "Equipment master snapshot",
       "assetIds": [
         "EQ-UT-00142",
         "EQ-UT-00143",
@@ -342,11 +343,12 @@
         "EQ-AH-00302",
         "EQ-TK-00401"
       ],
-      "name": "Master asset synchronization",
-      "status": "Succeeded"
+      "status": "Failed",
+      "note": "Pinned initial ETL demo metadata; runtime state is local to etl_monitoring."
     },
     {
       "id": "PIPE-QUALITY",
+      "name": "Quality observation ingestion",
       "assetIds": [
         "EQ-UT-00142",
         "EQ-UT-00143",
@@ -357,8 +359,33 @@
         "EQ-AH-00302",
         "EQ-TK-00401"
       ],
-      "name": "Quality telemetry ingestion",
-      "status": "Succeeded"
+      "status": "Warning",
+      "note": "Pinned initial ETL demo metadata; runtime state is local to etl_monitoring."
+    },
+    {
+      "id": "PIPE-DRAWING-INDEX",
+      "name": "Drawing relationship index",
+      "assetIds": [
+        "EQ-UT-00142",
+        "EQ-UT-00143",
+        "EQ-UT-00144",
+        "EQ-CH-00201",
+        "EQ-CH-00202",
+        "EQ-AH-00301",
+        "EQ-AH-00302",
+        "EQ-TK-00401"
+      ],
+      "status": "Failed",
+      "note": "Pinned initial ETL demo metadata; runtime state is local to etl_monitoring."
+    },
+    {
+      "id": "PIPE-DELIVERY-INDEX",
+      "name": "Accepted handover index",
+      "assetIds": [
+        "EQ-CH-00201"
+      ],
+      "status": "Succeeded",
+      "note": "Pinned initial ETL demo metadata; runtime state is local to etl_monitoring."
     }
   ],
   "alarms": [

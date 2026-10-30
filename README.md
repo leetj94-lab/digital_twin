@@ -35,7 +35,8 @@ for source development use /index.source.html and rebuild before publishing.
 - Master-data lifecycle, specifications and maintenance standards are owned by the
   separate master_data demo. Cross-app edits are not automatically synchronized.
 - Platform also opens drawing management and document handover by the same asset ID.
-- ETL remains Planned; no live telemetry or automatic cross-app synchronization.
+- ETL monitoring is available for real in-browser processing of synthetic record batches.
+- All five demos retain separate browser-local state; no automatic cross-app synchronization.
 
 ## Models and architecture
 
