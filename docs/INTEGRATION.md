@@ -104,3 +104,11 @@ https://leetj94-lab.github.io/engineering_drawing/ . The twin drawing fixture no
 uses the actual released UT-PID/GA/SLD identifiers and revisions. Export scopes
 many-to-many asset references to the selected equipment. No live synchronization
 or CAD import is claimed.
+
+## Document handover available
+
+The document_delivery demo at https://leetj94-lab.github.io/document_delivery/
+accepts the same canonical assetId. It owns dossier submissions, structured document
+checks, review/acceptance and release manifests. Links preserve equipment context;
+browser-local decisions are not automatically synchronized across applications.
+For equipment without a seeded dossier, create a package from the shared master list.

@@ -34,7 +34,8 @@ for source development use /index.source.html and rebuild before publishing.
 - Platform → Master data opens the same canonical asset at the public Pages site.
 - Master-data lifecycle, specifications and maintenance standards are owned by the
   separate master_data demo. Cross-app edits are not automatically synchronized.
-- Other app repositories remain Planned; no fabricated live integrations.
+- Platform also opens drawing management and document handover by the same asset ID.
+- ETL remains Planned; no live telemetry or automatic cross-app synchronization.
 
 ## Models and architecture
 

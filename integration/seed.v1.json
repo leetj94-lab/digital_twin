@@ -302,84 +302,31 @@
   ],
   "deliveries": [
     {
-      "id": "DLV-0001",
+      "id": "DEL-0001",
       "assetIds": [
         "EQ-UT-00142"
       ],
-      "documentIds": [
-        "DOC-0001"
-      ],
-      "status": "Accepted"
+      "documentIds": [],
+      "status": "Draft",
+      "note": "Seed dossier metadata; use document_delivery for its own document contents and local workflow state."
     },
     {
-      "id": "DLV-0002",
-      "assetIds": [
-        "EQ-UT-00143"
-      ],
-      "documentIds": [
-        "DOC-0002"
-      ],
-      "status": "Accepted"
-    },
-    {
-      "id": "DLV-0003",
-      "assetIds": [
-        "EQ-UT-00144"
-      ],
-      "documentIds": [
-        "DOC-0003"
-      ],
-      "status": "Accepted"
-    },
-    {
-      "id": "DLV-0004",
+      "id": "DEL-0002",
       "assetIds": [
         "EQ-CH-00201"
       ],
-      "documentIds": [
-        "DOC-0004"
-      ],
-      "status": "Accepted"
+      "documentIds": [],
+      "status": "Accepted",
+      "note": "Seed dossier metadata; use document_delivery for its own document contents and local workflow state."
     },
     {
-      "id": "DLV-0005",
-      "assetIds": [
-        "EQ-CH-00202"
-      ],
-      "documentIds": [
-        "DOC-0005"
-      ],
-      "status": "Accepted"
-    },
-    {
-      "id": "DLV-0006",
+      "id": "DEL-0003",
       "assetIds": [
         "EQ-AH-00301"
       ],
-      "documentIds": [
-        "DOC-0006"
-      ],
-      "status": "Accepted"
-    },
-    {
-      "id": "DLV-0007",
-      "assetIds": [
-        "EQ-AH-00302"
-      ],
-      "documentIds": [
-        "DOC-0007"
-      ],
-      "status": "Accepted"
-    },
-    {
-      "id": "DLV-0008",
-      "assetIds": [
-        "EQ-TK-00401"
-      ],
-      "documentIds": [
-        "DOC-0008"
-      ],
-      "status": "Accepted"
+      "documentIds": [],
+      "status": "Submitted",
+      "note": "Seed dossier metadata; use document_delivery for its own document contents and local workflow state."
     }
   ],
   "pipelines": [

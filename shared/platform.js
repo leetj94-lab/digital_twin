@@ -3,7 +3,7 @@ export const SCHEMA_VERSION = '1.0.0';
 export const modules = [
   {id:'master_data',name:'Master data',repository:'https://github.com/leetj94-lab/master_data',baseUrl:'https://leetj94-lab.github.io/master_data/',description:'Governs equipment identity, standards, registration interlocks and lifecycle.'},
   {id:'engineering_drawing',name:'Engineering drawings',repository:'https://github.com/leetj94-lab/engineering_drawing',baseUrl:'https://leetj94-lab.github.io/engineering_drawing/',description:'Owns drawing revisions and equipment-to-drawing relationships.'},
-  {id:'document_delivery',name:'Document delivery',repository:'https://github.com/leetj94-lab/document_delivery',baseUrl:null,description:'Owns submissions, validation and approved document releases.'},
+  {id:'document_delivery',name:'Document delivery',repository:'https://github.com/leetj94-lab/document_delivery',baseUrl:'https://leetj94-lab.github.io/document_delivery/',description:'Owns submissions, validation and approved document releases.'},
   {id:'etl_monitoring',name:'ETL monitoring',repository:'https://github.com/leetj94-lab/etl_monitoring',baseUrl:null,description:'Owns ingestion runs, lineage, failures and retry history.'},
 ];
 const tabs = ['Overview','Quality','Alarms','Work','Documents','Platform'];
