@@ -1,0 +1,10 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {assets,initialAlarms,createWork,acknowledge,loadState,saveState,trend,escapeHTML} from '../src/data.js';
+const empty=()=>({work:[],acknowledged:[]});
+test('work requests preserve selected equipment and source alarm',()=>{const s=createWork(empty(),assets[0].id,'Inspect vibration and bearing condition','High',new Date('2026-10-30T09:00:00Z'));assert.equal(s.work[0].assetId,assets[0].id);assert.equal(s.work[0].sourceAlarm,initialAlarms[0].id);assert.equal(s.work[0].status,'Requested');assert.equal(empty().work.length,0);});
+test('invalid work cannot be persisted',()=>{assert.throws(()=>createWork(empty(),'bad','Long enough summary','High'));assert.throws(()=>createWork(empty(),assets[0].id,'short','High'));assert.throws(()=>createWork(empty(),assets[0].id,'Long enough summary','Urgent'));});
+test('acknowledgement is idempotent and does not clear physical quality warning',()=>{const s=acknowledge(acknowledge(empty(),initialAlarms[0].id),initialAlarms[0].id);assert.equal(s.acknowledged.length,1);assert.equal(assets[0].warning,true);});
+test('local persistence restores requests, handles corruption and unavailable storage',()=>{let value=null;const storage={getItem:()=>value,setItem:(_,v)=>value=v};const s=createWork(empty(),assets[1].id,'Inspect normal standby pump','Normal');assert.equal(saveState(storage,s),true);assert.deepEqual(loadState(storage),s);value='{broken';assert.deepEqual(loadState(storage),empty());assert.equal(saveState({setItem(){throw Error('disabled');}},s),false);});
+test('synthetic series have consistent warning semantics',()=>{for(const a of assets){const values=trend(a);assert.equal(values.length,30);assert.ok(values.every(Number.isFinite));assert.equal(a.value>a.limit,a.warning);}});
+test('untrusted summaries are escaped for rendering',()=>{assert.equal(escapeHTML('<script>"&</script>'),'&lt;script&gt;&quot;&amp;&lt;/script&gt;');});
