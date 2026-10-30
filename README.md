@@ -1,70 +1,58 @@
 # Factory Twin
 
-An interactive WebGL digital twin concept for an industrial utility facility. Select equipment in the model and follow its quality trends, alarms, technical documents and work requests without leaving the workspace.
+**Live GitHub Pages:** https://leetj94-lab.github.io/digital_twin/
 
-**Portfolio concept · Synthetic data · Simulated processing.** This is a functional frontend demo, not a production monitoring or maintenance system and not a reproduction of employer software.
+Interactive WebGL facility concept with repository-local factory models, equipment
+selection, synthetic quality trends, alarms, work requests and technical documents.
+All data and geometry are fictional or appropriately licensed; no employer assets.
 
-## Try the workflow
+## Main-branch deployment
 
-1. Orbit/zoom the 3D model or choose **Overview**, **Interior** or **Plan**.
-2. Click the warning pump `EQ-UT-00142`, its label, or its equipment-list entry. Search supports IDs, equipment names and areas.
-3. Open **Quality** to inspect a synthetic trend and threshold.
-4. Open **Alarms** and acknowledge the warning. Acknowledgement does not falsely clear the physical quality condition.
-5. Open **Work**, enter a summary and submit a work request. The selected equipment and source alarm are linked automatically.
-6. Open **Documents** to download a synthetic specification, guide or CSV. Inspect the inline linked schematic.
-7. Refresh the browser: requests and acknowledgements persist in local storage. **About → Reset demo data** clears only this demo's state.
+Pages settings: **Deploy from a branch → main → /(root)**.
+The root index.html and generated assets/, models/, licenses/ and integration/ folders
+are committed ready to serve. .nojekyll prevents Jekyll processing. No ChatGPT hosting
+is needed. The Pages workflow in .github validates source and generated output only;
+GitHub's branch-based publishing handles the actual deployment.
 
-## Run locally
-
-Requires Node.js 20.19+ (Node.js 22 recommended).
-
-```bash
+```sh
 npm ci
-npm run dev
-```
-
-```bash
 npm test
 npm run build
 ```
 
-The production build is `dist/`. Serve it through HTTP; opening `index.html` with `file://` does not support normal module/model loading.
+Edit **index.source.html** and src/ (root index.html is generated). Run npm run build
+and commit both source and generated root output to main. Source dependencies are
+pinned in package-lock.json. npm run dev serves the checked-in root publication;
+for source development use /index.source.html and rebuild before publishing.
 
-## Architecture
+## Features
 
-- **Rendering:** Three.js WebGLRenderer, OrbitControls, raycasting, asset-label projection, animated camera presets, model visibility controls, responsive resize and capped device pixel ratio.
-- **Models:** repository-local CC0 Kenney factory GLB plus texture, combined with an original procedural utility hall and equipment. Assets are not hotlinked. See `THIRD_PARTY_NOTICES.md` for exact provenance, hash and licenses.
-- **Application:** JavaScript modules and Vite. `src/data.js` owns fixtures and immutable alarm/work transitions; `src/viewer.js` owns the scene; `src/main.js` owns interaction and UI.
-- **State:** browser-local persistence with malformed-state recovery and safe output escaping. This demo deliberately has no live industrial connection, authentication, telemetry backend or shared work-order database.
-- **Documents:** downloadable synthetic HTML/CSV and inline SVG schematic; no real engineering documents.
-- **Verification:** state-transition tests cover equipment/alarm linking, input validation, idempotent acknowledgement, persistence recovery and synthetic warning consistency. Browser workflow verification is recorded in `QA.md`.
+- Orbit/zoom, overview/interior/plan views, selectable equipment meshes and name tags.
+- Equipment list can be minimized, closed and reopened.
+- Equipment quality/alarms/work/documents are contextual; data is synthetic.
+- Acknowledgement does not clear the physical warning. Linked requests persist locally.
+- Platform → Master data opens the same canonical asset at the public Pages site.
+- Master-data lifecycle, specifications and maintenance standards are owned by the
+  separate master_data demo. Cross-app edits are not automatically synchronized.
+- Other app repositories remain Planned; no fabricated live integrations.
 
-## GitHub Pages
+## Models and architecture
 
-The included `.github/workflows/pages.yml` validates and builds the project, then deploys `dist/`. In the repository settings, enable **Pages → Source: GitHub Actions**. Relative production asset paths support repository subpaths. A pull request only validates/builds and does not deploy.
+Three.js WebGLRenderer, OrbitControls and GLTFLoader. Repository-local CC0 Kenney
+factory model plus original utility scene/pumps/pipes. See THIRD_PARTY_NOTICES.md
+for provenance, exact hashes and licenses. SVG compatibility rendering is available
+when WebGL cannot initialize. GPU rendering was not directly verified in the managed
+browser, which has WebGL disabled.
 
-## Model scope and attribution
+Application/domain modules are in src/. Utility geometry is authored in src/scene.js;
+public/models/utility-hall.glb is its exported glTF snapshot (node extras retain IDs).
+Re-export with node scripts/export-model.mjs after geometry edits, then rebuild.
 
-The adjacent campus factory is Kenney's **City Kit (Industrial)**, CC0. The selectable pumps, chillers, air handlers, utility structure and piping are original sample geometry. The scene is an illustrative facility, not an engineering-accurate construction model. No company data, screenshots, code or facility layouts are included.
+Browser-local state only: no shared backend, login system or real industrial connection.
+Local data from earlier ChatGPT hosting is not migrated to the new origin.
 
-MIT for original application code; third-party licenses remain separate.
+Shared fixture, URL and export contracts are described in docs/INTEGRATION.md.
+Versioned master snapshots use v2 lifecycle vocabulary set-up/active/inactive/expired;
+this twin does not import those snapshots or infer current master status from warnings.
 
-## Export the original scene
-
-`public/models/utility-hall.glb` contains an exported copy of the original utility scene, including equipment IDs in glTF node extras. Rebuild it after changing procedural geometry with:
-
-```bash
-node scripts/export-model.mjs
-```
-
-The application builds that same original scene from `src/scene.js` for asset interactions and loads the separate Kenney factory GLB at runtime. Keeping both the source geometry and an interchange-format snapshot makes it straightforward to replace the original scene with a real approved BIM/glTF model later.
-
-WebGL-unavailable browsers use Three.js SVGRenderer compatibility rendering of the same geometry, with simplified materials. The application reports the active renderer in the footer.
-
-## Platform integration foundation
-
-Equipment list supports minimize, close and reopen. Model name tags are clickable
-selection controls. Deep links restore equipment and section (`?assetId=EQ-UT-00142&tab=Platform`).
-The Platform tab opens the available master-data demo and shows three planned repositories and exports an equipment-scoped
-JSON bundle. No live integrations are claimed. See [integration contract](docs/INTEGRATION.md)
-for common fixtures, JSON Schema, ownership, URL contracts and the shared-backend roadmap.
+MIT for original code. Third-party model/software licenses remain separate.

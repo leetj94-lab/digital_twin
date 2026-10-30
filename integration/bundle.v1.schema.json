@@ -1,0 +1,237 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Factory platform portable asset bundle v1",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "siteId",
+    "synthetic",
+    "source",
+    "exportedAt",
+    "context",
+    "assets",
+    "drawings",
+    "documents",
+    "deliveries",
+    "pipelines",
+    "alarms",
+    "workRequests",
+    "acknowledgedAlarmIds"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0.0"
+    },
+    "siteId": {
+      "const": "DEMO-PLANT-01"
+    },
+    "synthetic": {
+      "const": true
+    },
+    "source": {
+      "const": "digital_twin"
+    },
+    "exportedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "context": {
+      "type": "object",
+      "required": [
+        "assetId"
+      ],
+      "properties": {
+        "assetId": {
+          "type": "string",
+          "pattern": "^EQ-[A-Z]{2}-[0-9]{5}$"
+        }
+      }
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/asset"
+      }
+    },
+    "drawings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/linked"
+      }
+    },
+    "documents": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/linked"
+      }
+    },
+    "deliveries": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/delivery"
+      }
+    },
+    "pipelines": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/linked"
+      }
+    },
+    "alarms": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/alarm"
+      }
+    },
+    "workRequests": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/work"
+      }
+    },
+    "acknowledgedAlarmIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    }
+  },
+  "$defs": {
+    "linked": {
+      "type": "object",
+      "required": [
+        "id",
+        "assetIds"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "assetIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^EQ-[A-Z]{2}-[0-9]{5}$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      }
+    },
+    "asset": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "pos"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^EQ-[A-Z]{2}-[0-9]{5}$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "pos": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 3,
+          "maxItems": 3
+        }
+      }
+    },
+    "delivery": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/linked"
+        },
+        {
+          "type": "object",
+          "required": [
+            "documentIds"
+          ],
+          "properties": {
+            "documentIds": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "alarm": {
+      "type": "object",
+      "required": [
+        "id",
+        "assetId",
+        "title"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "assetId": {
+          "type": "string",
+          "pattern": "^EQ-[A-Z]{2}-[0-9]{5}$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "work": {
+      "type": "object",
+      "required": [
+        "id",
+        "assetId",
+        "summary",
+        "priority",
+        "created"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "assetId": {
+          "type": "string",
+          "pattern": "^EQ-[A-Z]{2}-[0-9]{5}$"
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 10,
+          "maxLength": 240
+        },
+        "priority": {
+          "enum": [
+            "High",
+            "Normal",
+            "Low"
+          ]
+        },
+        "created": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "sourceAlarm": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    }
+  }
+}

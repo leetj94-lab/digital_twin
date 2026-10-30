@@ -89,3 +89,10 @@ validation when the common backend is actually introduced.
 
 This is the implementation plan for the future apps, not functionality claimed for
 the current frontend demo.
+
+## Main branch publication
+
+Both demos use GitHub Pages main / (root). Build and commit generated root files.
+Twin entry source is index.source.html; root index.html is generated. Master snapshots
+now use version 2.0.0 for set-up / active / inactive / expired lifecycle semantics.
+The twin still uses context navigation, not automatic master snapshot import.

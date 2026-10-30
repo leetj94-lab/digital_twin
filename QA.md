@@ -40,3 +40,10 @@ This frontend demo has no backend, authentication or live industrial telemetry. 
 
 - Master data now has a verified deployed URL in the platform registry. Its link
   carries the selected canonical asset ID; other applications remain Planned.
+
+## GitHub main-branch release
+
+- Vite entry moved to index.source.html; root index.html is compiled publication.
+- Public model/texture files, compiled assets and .nojekyll are checked in at root.
+- Platform master-data URL now points to leetj94-lab.github.io/master_data/.
+- Existing tests and production build pass; branch Pages performs deployment.
