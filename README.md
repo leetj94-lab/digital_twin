@@ -60,3 +60,11 @@ node scripts/export-model.mjs
 The application builds that same original scene from `src/scene.js` for asset interactions and loads the separate Kenney factory GLB at runtime. Keeping both the source geometry and an interchange-format snapshot makes it straightforward to replace the original scene with a real approved BIM/glTF model later.
 
 WebGL-unavailable browsers use Three.js SVGRenderer compatibility rendering of the same geometry, with simplified materials. The application reports the active renderer in the footer.
+
+## Platform integration foundation
+
+Equipment list supports minimize, close and reopen. Model name tags are clickable
+selection controls. Deep links restore equipment and section (`?assetId=EQ-UT-00142&tab=Platform`).
+The Platform tab shows the four planned repositories and exports an equipment-scoped
+JSON bundle. No live integrations are claimed. See [integration contract](docs/INTEGRATION.md)
+for common fixtures, JSON Schema, ownership, URL contracts and the shared-backend roadmap.

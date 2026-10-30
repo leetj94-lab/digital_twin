@@ -1,0 +1,447 @@
+{
+  "schemaVersion": "1.0.0",
+  "siteId": "DEMO-PLANT-01",
+  "synthetic": true,
+  "assets": [
+    {
+      "id": "EQ-UT-00142",
+      "name": "Chilled water pump A",
+      "type": "Centrifugal pump",
+      "area": "Pump hall",
+      "pos": [
+        -7,
+        0,
+        4
+      ],
+      "kind": "pump",
+      "warning": true,
+      "metric": "Vibration",
+      "unit": "mm/s",
+      "value": 4.8,
+      "limit": 4.5,
+      "model": "CWP-200",
+      "flow": "120 m³/h",
+      "power": "22 kW"
+    },
+    {
+      "id": "EQ-UT-00143",
+      "name": "Chilled water pump B",
+      "type": "Centrifugal pump",
+      "area": "Pump hall",
+      "pos": [
+        -2,
+        0,
+        4
+      ],
+      "kind": "pump",
+      "warning": false,
+      "metric": "Vibration",
+      "unit": "mm/s",
+      "value": 2.1,
+      "limit": 4.5,
+      "model": "CWP-200",
+      "flow": "120 m³/h",
+      "power": "22 kW"
+    },
+    {
+      "id": "EQ-UT-00144",
+      "name": "Chilled water pump C",
+      "type": "Centrifugal pump",
+      "area": "Pump hall",
+      "pos": [
+        3,
+        0,
+        4
+      ],
+      "kind": "pump",
+      "warning": false,
+      "metric": "Vibration",
+      "unit": "mm/s",
+      "value": 1.8,
+      "limit": 4.5,
+      "model": "CWP-160",
+      "flow": "100 m³/h",
+      "power": "18 kW"
+    },
+    {
+      "id": "EQ-CH-00201",
+      "name": "Chiller unit A",
+      "type": "Water-cooled chiller",
+      "area": "Chiller bay",
+      "pos": [
+        -6,
+        0,
+        -5
+      ],
+      "kind": "chiller",
+      "warning": false,
+      "metric": "Outlet temperature",
+      "unit": "°C",
+      "value": 7.2,
+      "limit": 10,
+      "model": "CH-450",
+      "flow": "450 kW cooling",
+      "power": "95 kW"
+    },
+    {
+      "id": "EQ-CH-00202",
+      "name": "Chiller unit B",
+      "type": "Water-cooled chiller",
+      "area": "Chiller bay",
+      "pos": [
+        3,
+        0,
+        -5
+      ],
+      "kind": "chiller",
+      "warning": false,
+      "metric": "Outlet temperature",
+      "unit": "°C",
+      "value": 7.5,
+      "limit": 10,
+      "model": "CH-450",
+      "flow": "450 kW cooling",
+      "power": "95 kW"
+    },
+    {
+      "id": "EQ-AH-00301",
+      "name": "Air handling unit A",
+      "type": "Air handling unit",
+      "area": "Service deck",
+      "pos": [
+        -6,
+        6,
+        -5
+      ],
+      "kind": "ahu",
+      "warning": true,
+      "metric": "Filter pressure",
+      "unit": "Pa",
+      "value": 310,
+      "limit": 280,
+      "model": "AHU-80",
+      "flow": "8,000 m³/h",
+      "power": "11 kW"
+    },
+    {
+      "id": "EQ-AH-00302",
+      "name": "Air handling unit B",
+      "type": "Air handling unit",
+      "area": "Service deck",
+      "pos": [
+        3,
+        6,
+        -5
+      ],
+      "kind": "ahu",
+      "warning": false,
+      "metric": "Filter pressure",
+      "unit": "Pa",
+      "value": 185,
+      "limit": 280,
+      "model": "AHU-80",
+      "flow": "8,000 m³/h",
+      "power": "11 kW"
+    },
+    {
+      "id": "EQ-TK-00401",
+      "name": "Buffer tank",
+      "type": "Water buffer tank",
+      "area": "Chiller bay",
+      "pos": [
+        10,
+        0,
+        -5
+      ],
+      "kind": "tank",
+      "warning": false,
+      "metric": "Level",
+      "unit": "%",
+      "value": 68,
+      "limit": 90,
+      "model": "BT-5000",
+      "flow": "5,000 L capacity",
+      "power": "Passive"
+    }
+  ],
+  "drawings": [
+    {
+      "id": "DWG-0001",
+      "assetIds": [
+        "EQ-UT-00142"
+      ],
+      "title": "Chilled water pump A arrangement",
+      "revision": "C",
+      "status": "Approved"
+    },
+    {
+      "id": "DWG-0002",
+      "assetIds": [
+        "EQ-UT-00143"
+      ],
+      "title": "Chilled water pump B arrangement",
+      "revision": "C",
+      "status": "Approved"
+    },
+    {
+      "id": "DWG-0003",
+      "assetIds": [
+        "EQ-UT-00144"
+      ],
+      "title": "Chilled water pump C arrangement",
+      "revision": "C",
+      "status": "Approved"
+    },
+    {
+      "id": "DWG-0004",
+      "assetIds": [
+        "EQ-CH-00201"
+      ],
+      "title": "Chiller unit A arrangement",
+      "revision": "C",
+      "status": "Approved"
+    },
+    {
+      "id": "DWG-0005",
+      "assetIds": [
+        "EQ-CH-00202"
+      ],
+      "title": "Chiller unit B arrangement",
+      "revision": "C",
+      "status": "Approved"
+    },
+    {
+      "id": "DWG-0006",
+      "assetIds": [
+        "EQ-AH-00301"
+      ],
+      "title": "Air handling unit A arrangement",
+      "revision": "C",
+      "status": "Approved"
+    },
+    {
+      "id": "DWG-0007",
+      "assetIds": [
+        "EQ-AH-00302"
+      ],
+      "title": "Air handling unit B arrangement",
+      "revision": "C",
+      "status": "Approved"
+    },
+    {
+      "id": "DWG-0008",
+      "assetIds": [
+        "EQ-TK-00401"
+      ],
+      "title": "Buffer tank arrangement",
+      "revision": "C",
+      "status": "Approved"
+    }
+  ],
+  "documents": [
+    {
+      "id": "DOC-0001",
+      "assetIds": [
+        "EQ-UT-00142"
+      ],
+      "title": "CWP-200 specification",
+      "revision": "C",
+      "status": "Approved"
+    },
+    {
+      "id": "DOC-0002",
+      "assetIds": [
+        "EQ-UT-00143"
+      ],
+      "title": "CWP-200 specification",
+      "revision": "C",
+      "status": "Approved"
+    },
+    {
+      "id": "DOC-0003",
+      "assetIds": [
+        "EQ-UT-00144"
+      ],
+      "title": "CWP-160 specification",
+      "revision": "C",
+      "status": "Approved"
+    },
+    {
+      "id": "DOC-0004",
+      "assetIds": [
+        "EQ-CH-00201"
+      ],
+      "title": "CH-450 specification",
+      "revision": "C",
+      "status": "Approved"
+    },
+    {
+      "id": "DOC-0005",
+      "assetIds": [
+        "EQ-CH-00202"
+      ],
+      "title": "CH-450 specification",
+      "revision": "C",
+      "status": "Approved"
+    },
+    {
+      "id": "DOC-0006",
+      "assetIds": [
+        "EQ-AH-00301"
+      ],
+      "title": "AHU-80 specification",
+      "revision": "C",
+      "status": "Approved"
+    },
+    {
+      "id": "DOC-0007",
+      "assetIds": [
+        "EQ-AH-00302"
+      ],
+      "title": "AHU-80 specification",
+      "revision": "C",
+      "status": "Approved"
+    },
+    {
+      "id": "DOC-0008",
+      "assetIds": [
+        "EQ-TK-00401"
+      ],
+      "title": "BT-5000 specification",
+      "revision": "C",
+      "status": "Approved"
+    }
+  ],
+  "deliveries": [
+    {
+      "id": "DLV-0001",
+      "assetIds": [
+        "EQ-UT-00142"
+      ],
+      "documentIds": [
+        "DOC-0001"
+      ],
+      "status": "Accepted"
+    },
+    {
+      "id": "DLV-0002",
+      "assetIds": [
+        "EQ-UT-00143"
+      ],
+      "documentIds": [
+        "DOC-0002"
+      ],
+      "status": "Accepted"
+    },
+    {
+      "id": "DLV-0003",
+      "assetIds": [
+        "EQ-UT-00144"
+      ],
+      "documentIds": [
+        "DOC-0003"
+      ],
+      "status": "Accepted"
+    },
+    {
+      "id": "DLV-0004",
+      "assetIds": [
+        "EQ-CH-00201"
+      ],
+      "documentIds": [
+        "DOC-0004"
+      ],
+      "status": "Accepted"
+    },
+    {
+      "id": "DLV-0005",
+      "assetIds": [
+        "EQ-CH-00202"
+      ],
+      "documentIds": [
+        "DOC-0005"
+      ],
+      "status": "Accepted"
+    },
+    {
+      "id": "DLV-0006",
+      "assetIds": [
+        "EQ-AH-00301"
+      ],
+      "documentIds": [
+        "DOC-0006"
+      ],
+      "status": "Accepted"
+    },
+    {
+      "id": "DLV-0007",
+      "assetIds": [
+        "EQ-AH-00302"
+      ],
+      "documentIds": [
+        "DOC-0007"
+      ],
+      "status": "Accepted"
+    },
+    {
+      "id": "DLV-0008",
+      "assetIds": [
+        "EQ-TK-00401"
+      ],
+      "documentIds": [
+        "DOC-0008"
+      ],
+      "status": "Accepted"
+    }
+  ],
+  "pipelines": [
+    {
+      "id": "PIPE-ASSET-SYNC",
+      "assetIds": [
+        "EQ-UT-00142",
+        "EQ-UT-00143",
+        "EQ-UT-00144",
+        "EQ-CH-00201",
+        "EQ-CH-00202",
+        "EQ-AH-00301",
+        "EQ-AH-00302",
+        "EQ-TK-00401"
+      ],
+      "name": "Master asset synchronization",
+      "status": "Succeeded"
+    },
+    {
+      "id": "PIPE-QUALITY",
+      "assetIds": [
+        "EQ-UT-00142",
+        "EQ-UT-00143",
+        "EQ-UT-00144",
+        "EQ-CH-00201",
+        "EQ-CH-00202",
+        "EQ-AH-00301",
+        "EQ-AH-00302",
+        "EQ-TK-00401"
+      ],
+      "name": "Quality telemetry ingestion",
+      "status": "Succeeded"
+    }
+  ],
+  "alarms": [
+    {
+      "id": "AL-00418",
+      "assetId": "EQ-UT-00142",
+      "title": "Vibration above warning threshold",
+      "acknowledged": false,
+      "raised": "09:14",
+      "severity": "Warning"
+    },
+    {
+      "id": "AL-00419",
+      "assetId": "EQ-AH-00301",
+      "title": "Filter pressure above warning threshold",
+      "acknowledged": false,
+      "raised": "09:14",
+      "severity": "Warning"
+    }
+  ]
+}
